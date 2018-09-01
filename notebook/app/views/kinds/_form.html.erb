@@ -1,4 +1,5 @@
 <%= form_for(@kind, html: {class: 'basic-grey'}) do |f| %>
+  
   <% if @kind.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@kind.errors.count, "error") %> prohibited this kind from being saved:</h2>
@@ -12,14 +13,15 @@
   <% end %>
 
   <h1>New Kind</h1>
+  <h1>Editing Kind</h1>
 
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
   <div class="actions">
-  
-    <%= link_to 'Back', kinds_path %>
-    <%= f.submit %>
+    <%= link_to 'Show', @kind, class: 'button-success' %>
+    <%= link_to 'Back', kinds_path, class: 'button-back' %>
+    <%= f.submit 'Salvar', class: 'button' %>
   </div>
 <% end %>

@@ -13,6 +13,7 @@
   <% end %>
 
   <h1>New Contact</h1>
+  <h1>Editing Contact</h1>
 
   <div class="field">
     <%= f.label :name %><br>
@@ -33,6 +34,7 @@
   </div>
   
   <div class="actions">
+    <%= link_to 'Show', @contact, class: 'button-success' %>
     <%= link_to 'Back', contacts_path, class: 'button-back' %>
     <%= f.submit 'Salvar', class: 'button' %>
   </div>

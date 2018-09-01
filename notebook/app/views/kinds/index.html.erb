@@ -14,7 +14,7 @@
     <% @kinds.each do |kind| %>
       <tr>
         <td><%= kind.description %></td>
-        <td><%= link_to 'Show', kind %></td>
+        <td><%= link_to 'Show', kind, class: 'button-success' %></td>
         <td><%= link_to 'Edit', edit_kind_path(kind) %></td>
         <td><%= link_to 'Destroy', kind, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Kind', new_kind_path %>
+<%= link_to 'New Kind', new_kind_path, class: 'button' %>

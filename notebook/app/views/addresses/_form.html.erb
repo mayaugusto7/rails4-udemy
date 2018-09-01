@@ -12,6 +12,7 @@
   <% end %>
 
   <h1>New Address</h1>
+  <h1>Editing Address</h1>
 
   <div class="field">
     <%= f.label :street %><br>
@@ -30,6 +31,7 @@
     <%= f.text_field :contact_id %>
   </div>
   <div class="actions">
+    <%= link_to 'Show', @address, class: 'button-success' %>
     <%= link_to 'Back', addresses_path, class: 'button-back' %>
     <%= f.submit "Salvar", class: 'button' %>
   </div>
