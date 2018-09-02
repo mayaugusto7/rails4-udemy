@@ -2,7 +2,7 @@ class CreateAddresses < ActiveRecord::Migration
   def change
     create_table :addresses do |t|
       t.string :street
-      t.string :cidade
+      t.string :city
       t.string :state
       t.references :contact, index: true, foreign_key: true
 

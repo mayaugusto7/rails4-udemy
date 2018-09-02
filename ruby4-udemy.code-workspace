@@ -10,5 +10,7 @@
 			"path": "notebook"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "notebook"
+	}
 }

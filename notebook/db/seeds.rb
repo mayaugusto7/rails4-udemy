@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#   rake db:drop db:create db:migrate db:seed utils:seed
 
 puts 'Gerando o tipo de contato (Kinds ...)'
 
@@ -17,16 +18,3 @@ Kind.create!(
 )
 
 puts 'Kinds criados'
-
-puts 'Gerando os contatos (Contacts ...)'
-
-10.times do | i |
-    Contact.create!(
-        name: Faker::Name.name,
-        email: Faker::Internet.email,
-        kind: Kind.all.sample,
-        rmk: Faker::Lorem.paragraph([1,2,3,4,5].sample)
-    )
-end
-
-puts 'Contacts criados'
