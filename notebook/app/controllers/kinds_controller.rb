@@ -69,6 +69,7 @@ class KindsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # Filtra os parametros para uso
     def kind_params
       params.require(:kind).permit(:description)
     end

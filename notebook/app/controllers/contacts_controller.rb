@@ -14,8 +14,10 @@ class ContactsController < ApplicationController
   end
 
   # GET /contacts/new
+  # Não posso dar um new, por isso utilizamos o build para contruir um novo endereco
   def new
     @contact = Contact.new
+    @contact.build_address
     options_for_select
   end
 
@@ -72,7 +74,7 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:name, :email, :kind_id)
+      params.require(:contact).permit(:name, :email, :kind_id, :rmk, address_attributes: [:street, :city, :state])
     end
 
     def options_for_select
