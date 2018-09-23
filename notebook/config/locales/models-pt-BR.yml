@@ -1,8 +1,12 @@
 "pt-BR":
   activerecord:
     models:
-      contact: Contato
-      address: Address
+      contact: 
+        one: Contato
+        other: Contatos
+      address: 
+        one: Endereço
+        other: Endereços
     attributes:
       contact:
         name: "Nome"
