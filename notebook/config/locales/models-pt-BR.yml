@@ -7,13 +7,18 @@
       address: 
         one: Endereço
         other: Endereços
+      phone: 
+        one: Telefone
+        other: Telefones
     attributes:
       contact:
-        name: "Nome"
-        email: "Email"
-        kind: "Tipo de Contato"
-        rmk: "Observação"
+        name: Nome
+        email: Email
+        kind: Tipo de Contato
+        rmk: Observação
       address:
-        street: "Rua"
-        city: "Cidade"
-        state: "Estado"
+        street: Rua
+        city: Cidade
+        state: Estado
+      phone:
+        phone: Telefone 
