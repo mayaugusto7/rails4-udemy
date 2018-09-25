@@ -19,8 +19,8 @@
     <%= f.text_field :street %>
   </div>
   <div class="field">
-    <%= f.label :cidade %><br>
-    <%= f.text_field :cidade %>
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
   </div>
   <div class="field">
     <%= f.label :state %><br>
@@ -31,8 +31,8 @@
     <%= f.text_field :contact_id %>
   </div>
   <div class="actions">
-    <%= link_to 'Show', @address, class: 'button-success' %>
-    <%= link_to 'Back', addresses_path, class: 'button-back' %>
-    <%= f.submit "Salvar", class: 'button' %>
+    <%= link_to t('buttons.show'), @address, class: 'button-success' %>
+    <%= link_to t('buttons.back'), addresses_path, class: 'button-back' %>
+    <%= f.submit t('buttons.save'), class: 'button' %>
   </div>
 <% end %>

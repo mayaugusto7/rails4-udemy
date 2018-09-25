@@ -26,9 +26,9 @@
   </div>
 
   <div class="actions">
-    <%= link_to 'Show', @phone, class: 'button-success' %>
-    <%= link_to 'Back', phones_path, class: 'button-back' %>
-    <%= f.submit 'Salvar', class: 'button' %>
+    <%= link_to t('buttons.show'), @phone, class: 'button-success' %>
+    <%= link_to t('buttons.back'), phones_path, class: 'button-back' %>
+    <%= f.submit t('buttons.save'), class: 'button' %>
   </div>
 
 <% end %>
