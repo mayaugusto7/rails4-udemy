@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  before_action :set_options_for_select, only: [:new, :edit, :update, :create]
 
   # GET /contacts
   # GET /contacts.json
@@ -19,12 +20,11 @@ class ContactsController < ApplicationController
   def new
     @contact = Contact.new
     @contact.build_address
-    options_for_select
   end
 
   # GET /contacts/1/edit
   def edit
-    options_for_select
+
   end
 
   # POST /contacts
@@ -78,7 +78,7 @@ class ContactsController < ApplicationController
       params.require(:contact).permit(:name, :email, :kind_id, :rmk, address_attributes: [:street, :city, :state], phones_attributes: [:id, :phone, :_destroy])
     end
 
-    def options_for_select
+    def set_options_for_select
       @kind_options_for_select = Kind.all
     end
 

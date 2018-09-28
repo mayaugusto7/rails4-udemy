@@ -66,3 +66,6 @@ gem "cocoon"
 
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps https://github.com/amatsuda/kaminari/wiki
 gem 'kaminari'
+
+# i18n kaminari
+gem 'kaminari-i18n'
