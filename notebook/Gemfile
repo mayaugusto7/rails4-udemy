@@ -77,3 +77,6 @@ gem 'kaminari-i18n'
 
 # rails-assets https://rails-assets.org/#/
 gem 'rails-assets-notifyjs', source: 'http://insecure.rails-assets.org'
+gem 'rails-assets-bootstrap', source: 'http://insecure.rails-assets.org'
+gem 'rails-assets-font-awsome', '4.7.0', source: 'http://insecure.rails-assets.org'
+gem 'rails-assets-glyphicons',  source: 'http://insecure.rails-assets.org'
