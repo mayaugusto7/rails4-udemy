@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# bundler
+gem 'bundler', '>= 1.8.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.
@@ -69,3 +71,9 @@ gem 'kaminari'
 
 # i18n kaminari
 gem 'kaminari-i18n'
+
+# Bundler-like DSL + rake tasks for Bower on Rails
+# gem "bower-rails", "~> 0.11.0"
+
+# rails-assets https://rails-assets.org/#/
+gem 'rails-assets-notifyjs', source: 'http://insecure.rails-assets.org'
