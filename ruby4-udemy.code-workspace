@@ -5,9 +5,12 @@
 		},
 		{
 			"path": "notebook"
+<<<<<<< HEAD
 		},
 		{
 			"path": "escamboapp"
+=======
+>>>>>>> b2abfccef07e0336eed968605424f48a787c9fb5
 		}
 	],
 	"settings": {

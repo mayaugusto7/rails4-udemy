@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Escrevendo no arquivo
+=======
+Escrevendo no arquivo
+>>>>>>> b2abfccef07e0336eed968605424f48a787c9fb5
