@@ -5,7 +5,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Better erros config
-  BetterErrors::Middleware.allow_ip! '10.0.2.15'
+  BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
+
+  # Console WEB
+  config.web_console.whitelisted_ips = ENV['TRUSTED_IP']
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -47,4 +50,5 @@ Rails.application.configure do
 
   # Foreman fix
   $stdout.sync = true
+
 end

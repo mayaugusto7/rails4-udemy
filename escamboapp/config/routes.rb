@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'dashboard#index'
   end
 
+  get 'backoffice', to: 'backoffice/dashboard#index'
+  # get 'admin', to: 'backoffice/dashboard#index'
+
   namespace :site do
   get 'home', to: 'home#index'
   end
