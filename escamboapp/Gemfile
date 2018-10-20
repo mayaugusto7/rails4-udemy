@@ -10,6 +10,10 @@ gem 'foreman'
 # Flexible authentication solution for Rails with Warden. http://blog.plataformatec.com.br/tag/…
 gem 'devise'
 gem 'devise-i18n'
+# Rails gem of the Bootstrap based admin theme SB Admin 2. http://dreamingechoes.github.io/boots…
+gem 'bootstrap_sb_admin_base_v2'
+#  Font-awesome font bundled as an asset for the rails asset pipeline http://fortawesome.github.com/Font-Aw…
+gem 'font-awesome-rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -61,4 +65,5 @@ group :development do
   gem 'guard'
 end
 
-#
+# Bootstrap 3.3.7
+gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'

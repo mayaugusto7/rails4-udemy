@@ -5,7 +5,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Better erros config
-  BetterErrors::Middleware.allow_ip! '10.0.2.2'
+  BetterErrors::Middleware.allow_ip! '10.0.2.15'
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
