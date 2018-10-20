@@ -1,0 +1,33 @@
+<div class="basic-grey">
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Phones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Phone</th>
+      <th>Contact</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @phones.each do |phone| %>
+      <tr style="background:<%= cycle('#CCC', '#FFF') %>">
+        <td><%= phone.phone %></td>
+        <td><%= phone.contact.name %></td>
+        <td><%= link_to t('buttons.show'), phone, class: 'button-primary' %></td>
+        <td><%= link_to t('buttons.edit'), edit_phone_path(phone), class: 'button-warning' %></td>
+        <td><%= link_to t('buttons.destroy'), phone, class: 'button', method: :delete, data: { confirm: t('messages.confirm') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= paginate @phones %>
+<br>
+
+<%= link_to t('buttons.new'), new_phone_path, class: 'button-success' %>
+</div>

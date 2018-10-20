@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "ruby-starts-udemy"
+		},
+		{
+			"path": "notebook"
+		},
+		{
+			"path": "escamboapp"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "notebook"
+	}
+}

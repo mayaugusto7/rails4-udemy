@@ -1,0 +1,1 @@
+rdebug-ide --port 1234 --host 0.0.0.0 -- bin/rails s -b 0.0.0.0
