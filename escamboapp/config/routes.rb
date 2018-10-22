@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :backoffice do
+  get 'categories/index'
+  end
+
+  namespace :backoffice do
   get 'dashboard', to: 'dashboard#index'
   end
 
