@@ -68,3 +68,5 @@ end
 
 # Bootstrap 3.3.7
 gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
+# NotifyJS
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
