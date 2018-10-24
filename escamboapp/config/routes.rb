@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
 
-  namespace :backoffice do
-  get 'categories/index'
-  end
-
-  namespace :backoffice do
-  get 'dashboard', to: 'dashboard#index'
-  end
-
   get 'backoffice', to: 'backoffice/dashboard#index'
+
+  namespace :backoffice do
+    resources :categories, except: [:show, :destroy]
+    get 'dashboard', to: 'dashboard#index'
+  end
+
   # get 'admin', to: 'backoffice/dashboard#index'
 
   namespace :site do
@@ -17,7 +15,9 @@ Rails.application.routes.draw do
 
   devise_for :admins
   devise_for :members
+
   root 'site/home#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
