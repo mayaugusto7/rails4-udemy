@@ -23,7 +23,9 @@
         <thead>
         <tr>
           <th>#</th>
-          <th>Descrição</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Tipo de Acesso</th>
           <th style="width: 150px;">Ações</th>
         </tr>
         </thead>
@@ -31,13 +33,24 @@
         <% @admins.each do |admin| %>
           <tr>
             <td><%= admin.id %></td>
+            <td><%= admin.name %></td>
             <td><%= admin.email %></td>
+            <td><%= admin.role_br %></td>
             <td>
-              <%= link_to edit_backoffice_admin_path(admin.id), class: "btn btn-warning btn-circle"  do %>
-                <i class="fa fa-edit"></i>
+                <%= link_to edit_backoffice_admin_path(admin.id), class: "btn btn-warning btn-circle"  do %>
+                  <i class="fa fa-edit"></i>
+                <% end %>
+
+                <% if current_admin.id != admin.id %>
+                  <%= link_to backoffice_admin_path(admin), method: :delete, class: "btn btn-danger btn-circle",
+                              data: {confirm: "Você deseja realmente excluir o <b>#{admin.email}</b>?"}  do %>
+                    <i class="fa fa-times"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to "#", disabled: "disabled", class: "btn btn-danger btn-circle" do %>
+                    <i class="fa fa-times"></i>
+                  <% end %>
               <% end %>
-              <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-times"></i>
-              </button>
             </td>
           </tr>
         <% end %>

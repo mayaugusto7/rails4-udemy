@@ -1,6 +1,6 @@
 class Backoffice::AdminsController < BackofficeController
 
-  before_action :set_admin, only: [:edit, :update]
+  before_action :set_admin, only: [:edit, :update, :destroy]
 
   def index
     @admins = Admin.all
@@ -35,9 +35,20 @@ class Backoffice::AdminsController < BackofficeController
     end
 
     if @admin.update(params_admin)
-      redirect_to backoffice_admins_path, notice: "O Administrador foi (#{admin.description}) atualizado com sucesso!"
+      redirect_to backoffice_admins_path, notice: "O Administrador (#{@admin.name}) foi atualizado com sucesso!"
     else
       render :edit
+    end
+  end
+
+  def destroy
+
+    admin_email = @admin.email
+
+    if @admin.destroy
+      redirect_to backoffice_admins_path, notice: "O Administrador foi (#{admin_email}) excluído com sucesso!"
+    else
+      render :index
     end
   end
 
@@ -48,7 +59,7 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def params_admin
-    params.require(:admin).permit(:email, :password, :password_confirmation)
+    params.require(:admin).permit(:name, :email, :password, :password_confirmation)
   end
 
 end

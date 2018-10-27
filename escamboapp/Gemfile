@@ -59,6 +59,9 @@ group :development do
 
   # Generate Entity-Relationship Diagrams for Rails applications http://voormedia.github.io/rails-erd
   gem 'rails-erd'
+
+  # Faker JS
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :development do
@@ -66,7 +69,18 @@ group :development do
   gem 'guard-livereload', '~> 2.5', require: false
 end
 
-# Bootstrap 3.3.7
-gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
-# NotifyJS
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+source 'https://rails-assets.org' do
+  # Bootstrap 3.3.7
+  gem 'rails-assets-bootstrap', '3.3.7'
+
+  # BootBox JS
+  gem 'rails-assets-bootbox'
+
+  # NotifyJS
+  gem 'rails-assets-notifyjs'
+end
+
+
+
+
+
