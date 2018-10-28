@@ -25,7 +25,7 @@
       <%= form_for([:backoffice, @category]) do |f| %>
 
         <div class="form-group">
-          <label>Descrição</label>
+          <%= f.label :description %>
           <%= f.text_field :description, class: "form-control", placeholder: "Ex: Games"%>
         </div>
 

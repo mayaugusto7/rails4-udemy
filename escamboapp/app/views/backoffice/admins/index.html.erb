@@ -9,8 +9,10 @@
 
     <div class="row">
       <div class="col-lg-12" align="right">
-        <%= link_to new_backoffice_admin_path, class: "btn btn-success" do %>
-          <i class="fa fa-plus"></i> &nbsp;Novo
+        <% if policy(@admins).new? %>
+           <%= link_to new_backoffice_admin_path, class: "btn btn-success" do %>
+             <i class="fa fa-plus"></i> &nbsp;Novo
+           <% end %>
         <% end %>
       </div>
     </div>
@@ -35,7 +37,7 @@
             <td><%= admin.id %></td>
             <td><%= admin.name %></td>
             <td><%= admin.email %></td>
-            <td><%= admin.role_br %></td>
+            <td><%= admin.role_i18n %></td>
             <td>
                 <%= link_to edit_backoffice_admin_path(admin.id), class: "btn btn-warning btn-circle"  do %>
                   <i class="fa fa-edit"></i>
@@ -43,7 +45,7 @@
 
                 <% if current_admin.id != admin.id %>
                   <%= link_to backoffice_admin_path(admin), method: :delete, class: "btn btn-danger btn-circle",
-                              data: {confirm: "Você deseja realmente excluir o <b>#{admin.email}</b>?"}  do %>
+                              data: {confirm: t('messages.confirm_with', item: admin.name)}  do %>
                     <i class="fa fa-times"></i>
                   <% end %>
                 <% else %>
