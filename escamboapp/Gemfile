@@ -62,6 +62,9 @@ group :development do
 
   # Faker JS
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
+  # Catches mail and serves it through a dream. http://mailcatcher.me
+  gem 'mailcatcher'
 end
 
 group :development do
@@ -85,5 +88,3 @@ gem 'enum_help'
 
 # Minimal authorization through OO design and pure Ruby classes
 gem 'pundit'
-
-
