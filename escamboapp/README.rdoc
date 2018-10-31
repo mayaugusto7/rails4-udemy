@@ -30,3 +30,5 @@ Please feel free to use a different markup language if you do not plan to run
 # Vagrant livereload config
 config.vm.network :forwarded_port, guest: 35729, host: 35729
 guard -p -l 1
+
+# mailcatcher: mailcatcher --http-ip 0.0.0.0 -v
