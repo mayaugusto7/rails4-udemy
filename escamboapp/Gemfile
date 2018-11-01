@@ -65,6 +65,13 @@ group :development do
 
   # Catches mail and serves it through a dream. http://mailcatcher.me
   gem 'mailcatcher'
+
+  # Ruby Mine Debug  remote
+  gem 'ruby-debug-ide', '~> 0.6.0'
+  gem 'debase'
+
+  # Lero Lero Generator
+  gem 'lerolero_generator'
 end
 
 group :development do

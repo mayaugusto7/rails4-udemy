@@ -1,11 +1,11 @@
 $(function () {
 
-   let $sendMailModal = $('#sendMailModal');
+    $('#sendMailModal').modal('hide');
 
-   $sendMailModal.modal('hide');
-    $('#subject-name').val("")
-    $('#message-text').val("")
-   $.notify('Email enviado com sucesso', 'success');
+    $('#subject-name').val('')
+    $('#message-text').val('')
+
+    $.notify(<%= @notify_message %>, <%= @notify_flag %>);
 });
 
 

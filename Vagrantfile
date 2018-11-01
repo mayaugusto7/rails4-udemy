@@ -3,6 +3,7 @@ VAGRANTFILE_API_VERSION = '2'
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "bento/ubuntu-16.04"
   config.ssh.insert_key = false # linha obrigatória para Windows
+  config.vm.synced_folder ".", "/vagrant", owner: "vagrant", :mount_options => ["dmode=777"]
 
   config.vm.network :forwarded_port, guest: 3000, host: 3000    # rails
   config.vm.network :forwarded_port, guest: 9292, host: 9292    # rack
@@ -16,4 +17,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 9200, host: 9200    # elasticsearch
   config.vm.network :forwarded_port, guest: 27017, host: 27017  # mongodb
   config.vm.network :forwarded_port, guest: 80, host: 8080      # apache/nginx
+  config.vm.network :forwarded_port, guest: 35729, host: 35729  # livereload
+  config.vm.network :forwarded_port, guest: 35497, host: 35497  # rubymine remote
 end

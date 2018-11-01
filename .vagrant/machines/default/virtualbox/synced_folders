@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/mayco/Desktop/DEV-PROJECTS/ruby-projects/rails4-udemy","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/vagrant":{"owner":"vagrant","mount_options":["dmode=777","uid=1000","gid=1000"],"guestpath":"/vagrant","hostpath":"C:/Users/mayco/Desktop/DEV-PROJECTS/ruby-projects/rails4-udemy","disabled":false,"__vagrantfile":true}}}
