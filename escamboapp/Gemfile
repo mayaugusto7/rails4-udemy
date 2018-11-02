@@ -95,3 +95,9 @@ gem 'enum_help'
 
 # Minimal authorization through OO design and pure Ruby classes
 gem 'pundit'
+
+# Integration of RubyMoney - Money with Rails
+gem 'money-rails', '~>1.12'
+
+# Easy file attachment management for ActiveRecord thoughtbot.com/open-source
+gem 'paperclip', '~> 6.0.0'
