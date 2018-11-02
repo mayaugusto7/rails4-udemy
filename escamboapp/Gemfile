@@ -101,3 +101,6 @@ gem 'money-rails', '~>1.12'
 
 # Easy file attachment management for ActiveRecord thoughtbot.com/open-source
 gem 'paperclip', '~> 6.0.0'
+
+# jQuery UI for the Rails asset pipeline https://github.com/jquery-ui-rails/jquery-ui-rails
+gem 'jquery-ui-rails'

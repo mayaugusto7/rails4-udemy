@@ -14,9 +14,7 @@
   <%= stylesheet_link_tag 'site', media: 'all' %>
   <%= stylesheet_link_tag 'site/profile', media: 'all' %>
 
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_include_tag 'site' %>
-  <%= javascript_include_tag 'site/profile' %>
+  <%= yield :javascripts %>
 
   <%= csrf_meta_tags %>
 </head>
@@ -32,7 +30,7 @@
     <ul class="sidebar-nav">
 
       <li class="sidebar-brand">
-        <a  href="#">
+        <a href="#">
           Start Bootstrap
         </a>
       </li>
@@ -59,6 +57,24 @@
   </div>
 
 </div>
+
+
+<%= javascript_include_tag 'application' %>
+<%= javascript_include_tag 'site' %>
+<%= javascript_include_tag 'site/profile' %>
+<%= javascript_include_tag 'site/profile/ads' %>
+
+<% if notice %>
+  <%= javascript_tag "$.notify('#{notice}', 'success');" %>
+<% end %>
+
+<% if alert %>
+  <script>
+      $.notify("<%= alert %>", "error");
+  </script>
+<% end %>
+
 </body>
+
 
 </html>

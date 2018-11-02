@@ -17,16 +17,13 @@ Rails.application.routes.draw do
 
     namespace :profile do
       resources :dashboard, only: [:index]
-    end
-
-    namespace :profile do
-      resources :ads, only: [:index, :create, :edit, :new]
+      resources :ads, only: [:index, :edit, :update, :new, :create, :destroy]
     end
 
   end
 
   devise_for :admins, :skip => [:registrations]
-  devise_for :members
+  devise_for :members, controllers: { registrations: 'members/sessions'}
 
   root 'site/home#index'
 

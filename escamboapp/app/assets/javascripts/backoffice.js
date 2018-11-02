@@ -1,5 +1,4 @@
 //= require bootstrap_sb_admin_base_v2
-//= require notifyjs
 //= require bootbox
 
 // Sobre escreve o data confirm do rails

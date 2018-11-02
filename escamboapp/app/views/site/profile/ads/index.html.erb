@@ -20,7 +20,7 @@
         <tr>
           <th>#</th>
           <th>Titulo</th>
-          <th>Descrição</th>
+          <th>Categoria</th>
           <th>Preço</th>
           <th>Imagem</th>
           <th style="width: 150px;">Ações</th>
@@ -31,15 +31,15 @@
           <tr>
             <td><%= ad.id %></td>
             <td><%= ad.title %></td>
-            <td><%= ad.description %></td>
+            <td><%= ad.category.description %></td>
             <td><%= humanized_money_with_symbol ad.price %></td>
             <td><%= image_tag ad.picture.url(:thumb) %></td>
 
             <td>
-              <%= link_to edit_site_profile_ad_path(ad.id), class: "btn btn-warning btn-circle"  do %>
+              <%= link_to edit_site_profile_ad_path(ad.id), class: "btn btn-warning btn-circle", tooltype: "Editar"  do %>
                 <i class="fa fa-edit"></i>
               <% end %>
-              <button type="button" disabled="disabled" class="btn btn-danger btn-circle"><i class="fa fa-times"></i>
+              <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-times"></i>
               </button>
             </td>
           </tr>

@@ -13,3 +13,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( site.js site.css)
 Rails.application.config.assets.precompile += %w( backoffice.js backoffice.css)
 Rails.application.config.assets.precompile += %w( site/profile.js site/profile.css)
+Rails.application.config.assets.precompile += %w( site/profile/ads.js site/profile/ads.css)
