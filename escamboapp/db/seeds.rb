@@ -29,7 +29,7 @@ end
 puts 'Categorias criadas com sucesso.'
 
 
-##############################################
+############################################################################################
 
 puts 'Cadastrando o Admin Padrão'
 
@@ -40,3 +40,13 @@ Admin.create!(name: "Maycon Ribeiro",
               role: 0)
 
 puts 'Admin cadastrado com sucesso'
+
+############################################################################################
+
+puts 'Cadastrando o Membro Padrão'
+
+Member.create!(email: "membro@membro.com",
+              password: "123456",
+              password_confirmation: "123456")
+
+puts 'Membro cadastrado com sucesso'

@@ -1,17 +1,20 @@
-namespace :utils do
+namespace :dev do
 
   desc "Setup development"
-  task setup_dev: :environment do
+  task setup: :environment do
 
     puts 'Executando o Setup Development...'
+
+    images_path = Rails.root.join('public', 'system')
 
     puts "Apagando Banco de Dados... #{%x(rake db:drop)}"
     puts "Criando Banco de Dados... #{%x(rake db:create)}"
     puts %x(rake db:migrate)
     puts %x(rake db:seed)
-    puts %x(rake utils:generate_admins)
-    puts %x(rake utils:generate_members)
-    puts %x(rake utils:generate_ads)
+    puts %x(rake dev:generate_admins)
+    puts %x(rake dev:generate_members)
+    puts %x(rake dev:generate_ads)
+    puts "Apagando Imagens public/system... #{%x(rm -rf #{images_path})}"
 
     puts 'Setup Development concluido com sucesso!'
 
@@ -69,6 +72,18 @@ namespace :utils do
   task generate_ads: :environment do
 
     puts 'Cadastrando anúncios...'
+
+    5.times do
+      Ad.create!(title: Faker::Lorem.sentence([2,3,4,5].sample),
+                 description: LeroleroGenerator.paragraph(Random.rand(3)),
+                 member: Member.first,
+                 category: Category.all.sample,
+                 price: "#{Random.rand(500)}, #{Random.rand(99)}",
+                 picture:  File.new(Rails.root.join('public', 'templates', 'images-for-ads', "#{Random.rand(9)}.jpg"), 'r')
+
+      )
+    end
+
 
     100.times do
       Ad.create!(title: Faker::Lorem.sentence([2,3,4,5].sample),
