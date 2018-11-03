@@ -26,4 +26,14 @@ class ApplicationController < ActionController::Base
     redirect_to(request.referrer || root_path)
   end
 
+  def after_sign_in_path_for(resource)
+
+    if resource_name == :member
+      site_profile_dashboard_index_path(resource)
+    else
+      backoffice_dashboard_path(resource)
+    end
+
+  end
+
 end

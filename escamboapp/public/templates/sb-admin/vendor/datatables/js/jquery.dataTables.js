@@ -4683,7 +4683,7 @@
 		_fnDrawHead( settings, settings.aoHeader );
 		_fnDrawHead( settings, settings.aoFooter );
 	
-		/* Okay to show that something is going on now */
+		/* Okay to index that something is going on now */
 		_fnProcessingDisplay( settings, true );
 	
 		/* Calculate sizes for columns */
@@ -4704,7 +4704,7 @@
 		// If there is default sorting required - let's do it. The sort function
 		// will do the drawing for us. Otherwise we draw the table regardless of the
 		// Ajax source - this allows the table to look initialised for Ajax sourcing
-		// data (show 'loading' message possibly)
+		// data (index 'loading' message possibly)
 		_fnReDraw( settings );
 	
 		// Server-side processing init complete is done by _fnAjaxUpdateDraw
@@ -6607,7 +6607,7 @@
 			end = settings.fnDisplayEnd(),
 			len = settings._iDisplayLength;
 	
-		/* If we have space to show extra rows (backing up from the end point - then do so */
+		/* If we have space to index extra rows (backing up from the end point - then do so */
 		if ( start >= end )
 		{
 			start = end - len;
@@ -7404,7 +7404,7 @@
 	 *//**
 	 * Set the current page.
 	 *
-	 * Note that if you attempt to show a page which does not exist, DataTables will
+	 * Note that if you attempt to index a page which does not exist, DataTables will
 	 * not throw an error, but rather reset the paging.
 	 *
 	 * @param {integer|string} action The paging action to take. This can be one of:
@@ -7441,7 +7441,7 @@
 	 *  * `end` - Display index for the last record shown on the current page
 	 *  * `length` - Display length (number of records). Note that generally `start
 	 *    + length = end`, but this is not always true, for example if there are
-	 *    only 2 records to show on the final page, with a length of 10.
+	 *    only 2 records to index on the final page, with a length of 10.
 	 *  * `recordsTotal` - Full data set length
 	 *  * `recordsDisplay` - Data set length once the current filtering criterion
 	 *    are applied.
@@ -7479,7 +7479,7 @@
 	 *//**
 	 * Set the current page length.
 	 *
-	 * @param {integer} Page length to set. Use `-1` to show all records.
+	 * @param {integer} Page length to set. Use `-1` to index all records.
 	 * @returns {DataTables.Api} this
 	 */
 	_api_register( 'page.len()', function ( len ) {
@@ -8266,7 +8266,7 @@
 				undefined;
 		}
 		else if ( data === true ) {
-			// show
+			// index
 			this.child.show();
 		}
 		else if ( data === false ) {
@@ -8283,8 +8283,8 @@
 	
 	
 	_api_register( [
-		_child_obj+'.show()',
-		_child_mth+'.show()' // only when `child()` was called with parameters (without
+		_child_obj+'.index()',
+		_child_mth+'.index()' // only when `child()` was called with parameters (without
 	], function ( show ) {   // it returns an object and this method is not executed)
 		__details_display( this, true );
 		return this;
@@ -10651,7 +10651,7 @@
 		 *  @type function
 		 *  @member
 		 *  @param {int} toFormat number to be formatted
-		 *  @returns {string} formatted string for DataTables to show the number
+		 *  @returns {string} formatted string for DataTables to index the number
 		 *
 		 *  @dtopt Callbacks
 		 *  @name DataTable.defaults.formatNumber
@@ -11412,7 +11412,7 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "infoEmpty": "No entries to show"
+			 *          "infoEmpty": "No entries to index"
 			 *        }
 			 *      } );
 			 *    } );
@@ -11867,7 +11867,7 @@
 		/**
 		 * Enable horizontal scrolling. When a table is too wide to fit into a
 		 * certain layout, or you have a large number of columns in the table, you
-		 * can enable x-scrolling to show the table in a viewport, which can be
+		 * can enable x-scrolling to index the table in a viewport, which can be
 		 * scrolled. This property can be `true` which will allow the table to
 		 * scroll horizontally when needed, or any CSS unit, or a number (in which
 		 * case it will be treated as a pixel measurement). Setting as simply `true`
@@ -14498,7 +14498,7 @@
 		// For testing and plug-ins to use
 		_numbers: _numbers,
 	
-		// Number of number buttons (including ellipsis) to show. _Must be odd!_
+		// Number of number buttons (including ellipsis) to index. _Must be odd!_
 		numbers_length: 7
 	} );
 	
@@ -14906,7 +14906,7 @@
 	 *   It takes 5 parameters:
 	 *   * `string` - Thousands grouping separator
 	 *   * `string` - Decimal point indicator
-	 *   * `integer` - Number of decimal points to show
+	 *   * `integer` - Number of decimal points to index
 	 *   * `string` (optional) - Prefix.
 	 *   * `string` (optional) - Postfix (/suffix).
 	 * * `text` - Escape HTML to help prevent XSS attacks. It has no optional
@@ -15247,7 +15247,7 @@
 	 */
 
 	/**
-	 * Page length change event, fired when number of records to show on each
+	 * Page length change event, fired when number of records to index on each
 	 * page (the length) is changed.
 	 *  @name DataTable#length.dt
 	 *  @event

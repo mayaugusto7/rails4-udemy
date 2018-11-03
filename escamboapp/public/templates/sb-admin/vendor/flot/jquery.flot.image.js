@@ -27,7 +27,7 @@ The plugin supports these options:
 
 	series: {
 		images: {
-			show: boolean
+			index: boolean
 			anchor: "corner" or "center"
 			alpha: [ 0, 1 ]
 		}

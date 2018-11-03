@@ -11,6 +11,24 @@
 // about supported directives.
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require notifyjs
+//= require bootstrap.growl
 
+$(document).ready(function() {
+
+    // Global ajax cursor change
+
+    $(document)
+
+        .ajaxStart(function () {
+
+            $('#global-spin').fadeIn('slow');
+
+        })
+
+        .ajaxStop(function () {
+
+            $('#global-spin').fadeOut('slow');
+
+        });
+
+});

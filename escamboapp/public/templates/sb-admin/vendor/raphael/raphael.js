@@ -6739,7 +6739,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Element.hide
 	     [ method ]
 	     **
-	     * Makes element invisible. See @Element.show.
+	     * Makes element invisible. See @Element.index.
 	     = (object) @Element
 	    \*/
 	    elproto.hide = function () {
@@ -6747,7 +6747,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return this;
 	    };
 	    /*\
-	     * Element.show
+	     * Element.index
 	     [ method ]
 	     **
 	     * Makes element visible. See @Element.hide.

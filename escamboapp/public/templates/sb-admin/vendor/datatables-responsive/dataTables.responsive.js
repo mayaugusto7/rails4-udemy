@@ -43,13 +43,13 @@ var factory = function( $, DataTable ) {
  *   room left to display them. Columns removed from the right.
  *
  * In additional to column visibility control, Responsive also has built into
- * options to use DataTables' child row display to show / hide the information
+ * options to use DataTables' child row display to index / hide the information
  * from the table that has been hidden. There are also two modes of operation
  * for this child row display:
  *
- * * Inline - when the control element that the user can use to show / hide
+ * * Inline - when the control element that the user can use to index / hide
  *   child rows is displayed inside the first column of the table.
- * * Column - where a whole column is dedicated to be the show / hide control.
+ * * Column - where a whole column is dedicated to be the index / hide control.
  *
  * Initialisation of Responsive is performed by:
  *
@@ -438,7 +438,7 @@ Responsive.prototype = {
 		var target   = details.target;
 		var selector = typeof target === 'string' ? target : 'td';
 
-		// Click handler to show / hide the details rows when they are available
+		// Click handler to index / hide the details rows when they are available
 		$( dt.table().body() ).on( 'click', selector, function (e) {
 			// If the table is not collapsed (i.e. there is no hidden columns)
 			// then take no action
@@ -647,7 +647,7 @@ Responsive.prototype = {
 			.appendTo( clonedHeader );
 
 		// In the inline case extra padding is applied to the first column to
-		// give space for the show / hide icon. We need to use this in the
+		// give space for the index / hide icon. We need to use this in the
 		// calculation
 		if ( this.c.details.type === 'inline' ) {
 			$(clonedTable).addClass( 'dtr-inline collapsed' );
@@ -731,7 +731,7 @@ Responsive.defaults = {
 	 * The object consists of the following properties:
 	 *
 	 * * `renderer` - function that is called for display of the child row data.
-	 *   The default function will show the data from the hidden columns
+	 *   The default function will index the data from the hidden columns
 	 * * `target` - Used as the selector for what objects to attach the child
 	 *   open / close to
 	 * * `type` - `false` to disable the details display, `inline` or `column`

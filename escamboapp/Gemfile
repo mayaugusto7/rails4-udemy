@@ -87,7 +87,14 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootbox'
 
   # NotifyJS
-  gem 'rails-assets-notifyjs'
+  # gem 'rails-assets-notifyjs'
+
+  # BootstrapNotify
+  gem 'rails-assets-bootstrap.growl'
+
+  # Animate CSS
+  gem 'rails-assets-animate-css'
+
 end
 
 #Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
