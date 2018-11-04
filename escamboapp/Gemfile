@@ -63,6 +63,9 @@ group :development do
   # Faker JS
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
+  #Markdown Lorem Ipsum generator https://github.com/geekjuice/doctor_ipsum
+  gem 'doctor_ipsum'
+
   # Catches mail and serves it through a dream. http://mailcatcher.me
   gem 'mailcatcher'
 
@@ -95,6 +98,11 @@ source 'https://rails-assets.org' do
   # Animate CSS
   gem 'rails-assets-animate-css'
 
+  # Bootstrap Markdown
+  gem 'rails-assets-bootstrap-markdown'
+
+  # Marked
+  gem 'rails-assets-marked'
 end
 
 #Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
@@ -111,3 +119,7 @@ gem 'paperclip', '~> 6.0.0'
 
 # jQuery UI for the Rails asset pipeline https://github.com/jquery-ui-rails/jquery-ui-rails
 gem 'jquery-ui-rails'
+
+#The safe Markdown parser, reloaded.
+gem 'redcarpet'
+

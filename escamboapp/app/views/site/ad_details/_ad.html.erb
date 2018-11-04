@@ -3,9 +3,9 @@
   <%= image_tag @ad.picture.url(:large), class: "img-responsive" %>
   <div class="caption-full">
     <h4 class="pull-right"><%= humanized_money_with_symbol @ad.price %></h4>
-    <h4><%= truncate(@ad.title, length: 20) %></h4>
+    <h4><%= @ad.title %></h4>
     <p>
-      <%= truncate(@ad.description, length: 100) %>
+      <%= @ad.description.html_safe %>
     </p>
   </div>
   <div class="ratings">

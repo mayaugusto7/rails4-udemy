@@ -20,8 +20,8 @@ Rails.application.routes.draw do
       resources :ads, only: [:index, :edit, :update, :new, :create]
     end
 
-    resource :ad_details, only: [:show]
-
+    resources :ad_details, only: [:show]
+    resources :categories, only: [:show]
   end
 
   devise_for :admins, :skip => [:registrations]
