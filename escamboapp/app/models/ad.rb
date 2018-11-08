@@ -19,7 +19,7 @@ class Ad < ActiveRecord::Base
   scope :last_six, -> { limit(6).order(created_at: :desc) }
   scope :descending_order, ->(quantity = 10) { limit(quantity).order(created_at: :desc) }
   scope :to_member, ->(member) { where(member: member)}
-  scope :filter_category_id, -> (id) {where(category: id)}
+  scope :filter_category, -> (id) {where(category: id)}
 
   private
 

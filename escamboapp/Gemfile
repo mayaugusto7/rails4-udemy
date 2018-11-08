@@ -103,6 +103,10 @@ source 'https://rails-assets.org' do
 
   # Marked
   gem 'rails-assets-marked'
+
+  # History JS
+  gem 'rails-assets-history.js'
+
 end
 
 #Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
@@ -123,3 +127,8 @@ gem 'jquery-ui-rails'
 #The safe Markdown parser, reloaded.
 gem 'redcarpet'
 
+# http://norman.github.io/friendly_id
+gem 'friendly_id', '~> 5.2.0'
+
+# https://github.com/igor-alexandrov/wiselinks
+gem 'wiselinks'

@@ -2,6 +2,7 @@ class Site::CategoriesController < SiteController
 
   def show
     @categories = Category.order_by_description
-    @ads = Ad.filter_category_id(params[:id])
+    @category = Category.friendly.find(params[:id])
+    @ads = Ad.filter_category(@category)
   end
 end
