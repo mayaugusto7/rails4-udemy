@@ -1,10 +1,13 @@
 class Ad < ActiveRecord::Base
 
+  QTD_PER_PAGE = 6
+
   # Callback Active Record
   before_save :md_to_html
 
   belongs_to :category, counter_cache: true
   belongs_to :member
+  has_many :comments
 
   validates :title, :description_md, :description_short,
             :category, :picture, :finish_date, presence: true
@@ -16,10 +19,11 @@ class Ad < ActiveRecord::Base
   has_attached_file :picture, styles: { large: "800x300#", medium: "320x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
-  scope :last_six, -> { limit(6).order(created_at: :desc) }
-  scope :descending_order, ->(quantity = 10) { limit(quantity).order(created_at: :desc) }
-  scope :to_member, ->(member) { where(member: member)}
-  scope :filter_category, -> (id) {where(category: id)}
+  scope :last_six, -> { limit(QTD_PER_PAGE).order(created_at: :desc) }
+  scope :descending_order, ->(page) { order(created_at: :desc).page(page).per(QTD_PER_PAGE) }
+  scope :to_member, ->(member) { where(member: member) }
+  scope :filter_category, -> (id, page) { where(category: id).page(page).per(QTD_PER_PAGE) }
+  scope :search, -> (term, page) { where("title LIKE ?", "%#{term}%").page(page).per(QTD_PER_PAGE) }
 
   private
 

@@ -132,3 +132,10 @@ gem 'friendly_id', '~> 5.2.0'
 
 # https://github.com/igor-alexandrov/wiselinks
 gem 'wiselinks'
+
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
+# https://github.com/amatsuda/kaminari/…
+gem 'kaminari'
+
+# https://github.com/tigrish/kaminari-i18n
+gem 'kaminari-i18n'

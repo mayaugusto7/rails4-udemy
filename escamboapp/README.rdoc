@@ -38,3 +38,18 @@ rsync -zarv vagrant@vagrant:/remote/path /local/path
 
 # /vagrant/escamboapp/public/templates/images-for-ads
  File.new(Rails.root.join('public', 'templates', 'images-for-ads', '0.jpg'), 'r')
+
+### Dependências do projeto
+
+* ImageMagick (https://www.imagemagick.org)
+
+```
+sudo apt-get update
+sudo apt-get install imagemagick
+```
+
+* Graphviz (https://www.graphviz.org)
+```
+sudo apt-get update
+sudo apt-get install graphviz
+```
