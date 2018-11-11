@@ -15,7 +15,7 @@
 
             <label>Comentário</label>
             <%= text_area :comment, :body, class:"form-control", rows: 10 %>
-            <%  hidden_field :comment, :ad_id, value: @ad.id %>
+            <%= hidden_field :comment, :ad_id, value: @ad.id %>
           </div>
 
         </div>

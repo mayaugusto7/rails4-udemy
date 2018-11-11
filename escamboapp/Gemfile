@@ -139,3 +139,7 @@ gem 'kaminari'
 
 # https://github.com/tigrish/kaminari-i18n
 gem 'kaminari-i18n'
+
+# ⭐️ A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
+# http://ratingmoviestore.herokuapp.com
+gem 'ratyrate'

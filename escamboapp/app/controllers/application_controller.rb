@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  before_filter :store_current_location, :unless => :devise_controller?
+
   protect_from_forgery with: :exception
 
   include Pundit
@@ -29,11 +31,24 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
 
     if resource_name == :member
-      site_profile_dashboard_index_path(resource)
+
+      stored_location = stored_location_for(resource)
+
+      if stored_location.match(site_ad_details_path)
+          stored_location
+      else
+        site_profile_dashboard_index_path(resource)
+      end
+
     else
       backoffice_dashboard_path(resource)
     end
 
   end
 
+  private
+
+  def store_current_location
+    store_location_for(:member, request.url)
+  end
 end

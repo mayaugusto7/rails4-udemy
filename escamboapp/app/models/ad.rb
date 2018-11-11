@@ -2,6 +2,8 @@ class Ad < ActiveRecord::Base
 
   QTD_PER_PAGE = 6
 
+  ratyrate_rateable "quality"
+
   # Callback Active Record
   before_save :md_to_html
 
