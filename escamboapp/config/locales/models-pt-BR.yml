@@ -1,9 +1,9 @@
 "pt-BR":
-  helpers:
-    label:
-      member[profile_member_attributes]:
-        first_name: NOME
-        last_name: SOBRENOME
+#  helpers:
+#    label:
+#      member[profile_member_attributes]:
+#        first_name: NOME
+#        last_name: SOBRENOME
   activerecord:
     models:
       member:

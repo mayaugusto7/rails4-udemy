@@ -49,7 +49,16 @@ sudo apt-get install imagemagick
 ```
 
 * Graphviz (https://www.graphviz.org)
+
 ```
 sudo apt-get update
 sudo apt-get install graphviz
 ```
+
+   <div class="carousel-inner">
+        <% @carousel.each do |ad| %>
+          <div class="item <%= @carousel.first.id == ad.id  ? 'active': '' %>">
+            <%= image_tag ad.picture.url(:large), class: "slide-image" %>
+          </div>
+        <% end %>
+      </div>
